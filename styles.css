@@ -6,8 +6,15 @@ h1 {
     text-align: center;
   }
 
- 
-
+  body{
+    margin:0;
+    height:100vh;
+    display:grid;
+  }
+  h2{
+    margin-left: 4px;
+  }
+  
   .imageIntro
   {
     display: flex;
@@ -16,10 +23,6 @@ h1 {
     align-items: center;
   }
 
-  .intro{
-    
-  }
-  
   p{
     margin-right: 0px
     ;
@@ -29,10 +32,16 @@ h1 {
   }
   h1 {
     font-size: 72px;
-    background: rgb(91,213,7);
+    background: #5bd507;
     background: linear-gradient(292deg, rgba(91,213,7,1) 0%, rgba(144,194,142,1) 72%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+  }
+
+  h2{
+    font-size: 30px;
+    color: #a0d67b;
+    font-weight: bold;
   }
 
   *{
@@ -82,7 +91,7 @@ h1 {
   text-align: center;
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
   width: 600px;
-  height: 300px;
+  height: 350px;
   border-radius: 15px;
   box-shadow: 5px 10px 50px 1px hsla(0, 0%, 0%, 0.8);
   padding: 10px;
@@ -127,5 +136,246 @@ h1 {
   align-items: baseline;
 }
 
+/* Gallery */
+.gallery {
+  position: relative;
+  left: 40%;
+  width: 300px;
+  height: 200px;
+  transform-style: preserve-3d;
+  animation: rotate 30s linear infinite;
+}
 
+@keyframes rotate {
+  from {
+    transform: perspective(1200px) rotateY(0deg);
+  }
+  to {
+    transform: perspective(1200px) rotateY(360deg);
+  }
+}
+
+.gallery span {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  transform-origin: center;
+  transform-style: preserve-3d;
+  transform: rotateY(calc(var(--i) * 45deg)) translateZ(380px);
+}
+
+/* Image Container */
+.image-container {
+  position: relative;
+  width: 300px;
+  height: 200px;
+  overflow: hidden;
+}
+
+.image-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: filter 0.3s ease;
+}
+
+.image-container .image-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.image-container:hover img {
+  filter: blur(1px);
+}
+
+.image-container:hover .image-overlay {
+  opacity: 1;
+}
+
+.education img{
+  height: 300px;
+  width: 400px;
+  margin-left: 10px;
+  /* border-radius: 15px; */
+  border: 4px solid rgb(35, 35, 35) ;
+  box-shadow: 4px 5px 10px 2px rgb(27, 27, 27) ;
+}
+
+.education iframe{
+  height: 300px;
+  width: 400px;
+  margin-left: 10px;
+  border-radius: 15px;
+  border: 4px solid rgb(35, 35, 35) ;
+  box-shadow: 5px 10px 50px 1px hsla(0, 0%, 0%, 0.8);
+
+}
+
+.cu, .mic, .dav {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin-bottom: 100px;
+
+}
+
+.cuCard,.micCard, .davCard{
+ 
+  background-color: rgb(64, 94, 61);
+  text-align: center;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  width: 450px;
+  height: 300px;
+  border-radius: 15px;
+  box-shadow: 5px 10px 50px 1px hsla(0, 0%, 0%, 0.8);
+  padding: 10px;
+}
+
+.micSubjects, .davSubjects{
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap : wrap;
+  align-items: center;
+}
+
+.degree{
+  background-color: #dcefdf;
+  padding: 10px;
+  color: #27262b;
+  border-radius: 10px;
+}
+
+.micSubjects>div{
+  background-color: #dcefdf;
+  padding: 10px;
+  color: #27262b;
+  border-radius: 10px;
+}
+.davSubjects>div{
+  background-color: #dcefdf;
+  padding: 10px;
+  color: #27262b;
+  border-radius: 10px;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+.book{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+	font-family: "Poppins", sans-serif;
+}
+
+.book {
+    display: grid;
+    place-content: center;
+    height: 100vh;
+    width: 100vw;
+	overflow: hidden;
+	/* background: #f1c40f; */
+}
+
+.flipbook {
+    width: 1000px;
+    height: 600px;
+}
+
+.flipbook .hard {
+    background: #355F2E !important;
+    color: #fff;
+    font-weight: bold;
+    border: none; 
+}
+
+.flipbook .hard small{
+	font-style: italic;
+	font-weight: lighter;
+	opacity: 0.7;
+	font-size: 14px;
+}
+
+.flipbook .page {
+    background: grey;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+    gap: 10px;
+    border: 1px solid rgba(0, 0, 0, 0.11);
+}
+
+.page img{
+	width: 70%;
+	object-fit: cover;
+	margin: auto;
+}
+
+.flipbook .page small{
+	font-size: 14px;
+    margin-bottom: 10px;
+}
+
+#frontPage{
+  background-image: https://unsplash.com/photos/grey-and-red-porsche-911-parked-in-building-G7EHX5qU5-c ;
+}
+
+
+.interests{
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+
+.interests iframe{
+  border: 0px;
+  height: 100%;
+  width: 100px;
+}
+
+.interests h3{
+  color: #5bd507;
+  text-align: center;
+}
+
+.languages{
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap : wrap;
+  align-items: center;  
+}
+
+
+.languages > div{
+  width: 400px;
+  height: 70px;
+  font-size: 50px;
+  text-align: center;
+  background-color: #dcefdf;
+  padding: 10px;
+  color: #27262b;
+  border-radius: 10px;
+}
+
+/* .hindi{
+  background-image: url(./assets/images/hindi.webp);
+
+}
+
+.punjabi{
+  background-image: url(./assets/images/punjabi.jpg);
+  width: ;
+} */
 
